@@ -1,6 +1,6 @@
 package com.example.cryptocurrencytesttask.domain.pojo
 
-data class CurrencyList(
+data class CoinPriceInfo(
     val id: String,
     val name: String,
     val shortName: String,
