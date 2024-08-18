@@ -8,7 +8,7 @@ data class CoinDetailInfoDto (
     @SerializedName("name")
     val name: String,
     @SerializedName("image")
-    val imageUrl: ImageDto,
+    val image: ImageDto,
     @SerializedName("description")
     val description: DescriptionDto,
     @SerializedName("categories")
