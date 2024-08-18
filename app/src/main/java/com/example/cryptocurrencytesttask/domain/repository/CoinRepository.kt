@@ -1,4 +1,4 @@
-package com.example.cryptocurrencytesttask.domain
+package com.example.cryptocurrencytesttask.domain.repository
 
 import androidx.lifecycle.LiveData
 import com.example.cryptocurrencytesttask.domain.pojo.CoinDetailInfo
