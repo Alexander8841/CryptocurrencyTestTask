@@ -3,9 +3,8 @@ package com.example.cryptocurrencytesttask.presentation
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.cryptocurrencytesttask.R
 import com.example.cryptocurrencytesttask.databinding.ActivityCurrencyListBinding
-import com.example.cryptocurrencytesttask.domain.useCases.GetCurrencyListUseCase
+import com.example.cryptocurrencytesttask.domain.useCases.GetDetailInfoUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,7 +15,7 @@ class CurrencyListActivity : AppCompatActivity() {
         ActivityCurrencyListBinding.inflate(layoutInflater)
     }
     @Inject
-    lateinit var useCase: GetCurrencyListUseCase
+    lateinit var useCase: GetDetailInfoUseCase
     private val component by lazy {
         (application as CurrencyApp).component
     }
@@ -26,7 +25,7 @@ class CurrencyListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         CoroutineScope(Dispatchers.Main).launch {
-            val list = useCase("usd")
+            val list = useCase("bitcoin")
             list.observe(this@CurrencyListActivity) {
                 Log.d("Load", it.toString())
             }
