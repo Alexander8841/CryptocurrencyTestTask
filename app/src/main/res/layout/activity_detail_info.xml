@@ -35,14 +35,16 @@
         app:layout_constraintTop_toBottomOf="@id/view">
 
         <LinearLayout
+            android:id="@+id/llDetailInfo"
+            android:visibility="gone"
+            tools:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/ivLogo"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="6dp"
                 android:contentDescription="@string/currency_logo"
