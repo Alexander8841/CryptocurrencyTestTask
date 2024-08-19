@@ -4,7 +4,7 @@ import android.app.Application
 import com.example.cryptocurrencytesttask.di.DaggerApplicationComponent
 
 class CurrencyApp : Application() {
-    private val component by lazy {
+    val component by lazy {
         DaggerApplicationComponent.create()
     }
 

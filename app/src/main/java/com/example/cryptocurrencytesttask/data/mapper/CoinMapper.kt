@@ -14,6 +14,7 @@ class CoinMapper @Inject constructor() {
                 it.name,
                 it.shortName,
                 it.imageUrl,
+                it.price,
                 it.priceChangePercentage
             )
         }

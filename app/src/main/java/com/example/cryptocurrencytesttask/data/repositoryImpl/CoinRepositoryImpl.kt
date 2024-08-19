@@ -1,6 +1,5 @@
 package com.example.cryptocurrencytesttask.data.repositoryImpl
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.cryptocurrencytesttask.data.mapper.CoinMapper

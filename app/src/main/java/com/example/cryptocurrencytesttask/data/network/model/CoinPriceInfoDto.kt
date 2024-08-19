@@ -11,6 +11,8 @@ data class CoinPriceInfoDto (
     val shortName: String,
     @SerializedName("image")
     val imageUrl: String,
+    @SerializedName("current_price")
+    val price: Double,
     @SerializedName("price_change_percentage_24h")
     val priceChangePercentage: Double
 )

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">CryptocurrencyTestTask</string>
+    <string name="app_name">Криптовалюты</string>
+    <string name="currency_list">Список криптовалют</string>
+    <string name="usd">USD</string>
+    <string name="rub">RUB</string>
+    <string name="coin_icon">coin icon</string>
+    <string name="error_message">Произошла какая-то ошибка :(\nПопробуем снова?</string>
+    <string name="try_again">попробовать</string>
 </resources>

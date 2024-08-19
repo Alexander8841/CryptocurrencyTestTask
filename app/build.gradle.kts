@@ -27,6 +27,9 @@ android {
             )
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -46,14 +49,6 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.7.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("com.squareup.okhttp3:okhttp:4.9.2")
-
-    //room
-    val roomVersion = "2.6.1"
-    implementation ("androidx.room:room-runtime:$roomVersion")
-    ksp ("androidx.room:room-compiler:$roomVersion")
-
-    //WorkManager
-    implementation ("androidx.work:work-runtime-ktx:2.9.1")
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")

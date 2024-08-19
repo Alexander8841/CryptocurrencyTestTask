@@ -5,5 +5,6 @@ data class CoinPriceInfo(
     val name: String,
     val shortName: String,
     val imageUrl: String,
+    val price: Double,
     val priceChangePercentage: Double
 )
