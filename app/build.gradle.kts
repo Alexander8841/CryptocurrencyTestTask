@@ -50,6 +50,10 @@ dependencies {
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("com.squareup.okhttp3:okhttp:4.9.2")
 
+    //coroutines
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
