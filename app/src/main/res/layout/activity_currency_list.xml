@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.CurrencyListActivity">
+    tools:context=".presentation.activities.CurrencyListActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
@@ -84,14 +84,16 @@
         app:layout_constraintTop_toBottomOf="@id/toolBar" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCurrencyList"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/coin_item"
+        android:fillViewport="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view" />
+        app:layout_constraintTop_toBottomOf="@id/view"
+        tools:listitem="@layout/coin_item" />
 
     <ProgressBar
         android:id="@+id/pbLoading"
@@ -105,11 +107,11 @@
 
     <LinearLayout
         android:id="@+id/llError"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,17 +132,17 @@
             android:textSize="18sp" />
 
         <Button
-            style="@style/Widget.AppCompat.Button"
             android:id="@+id/buttonTryAgain"
-            android:textColor="@color/white"
-            android:layout_margin="20dp"
-            android:textSize="16sp"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
             android:text="@string/try_again"
-            app:backgroundTint="@color/orange"/>
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:backgroundTint="@color/orange" />
 
     </LinearLayout>
 

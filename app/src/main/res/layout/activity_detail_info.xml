@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.DetailInfoActivity">
+    tools:context=".presentation.activities.DetailInfoActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
@@ -29,18 +29,18 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view">
 
         <LinearLayout
             android:id="@+id/llDetailInfo"
-            android:visibility="gone"
-            tools:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <ImageView
                 android:id="@+id/ivLogo"
@@ -55,8 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingTop="10dp"
+                android:paddingEnd="16dp"
                 android:text="@string/description_title"
                 android:textColor="@color/black"
                 android:textSize="24sp"
@@ -67,19 +67,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingTop="10dp"
-                tools:text="@string/description"
+                android:paddingEnd="16dp"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="@string/description" />
 
             <TextView
                 android:id="@+id/tvCategoriesTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingTop="18dp"
+                android:paddingEnd="16dp"
                 android:text="@string/categories_title"
                 android:textColor="@color/black"
                 android:textSize="24sp"
@@ -90,12 +90,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingTop="10dp"
+                android:paddingEnd="16dp"
                 android:paddingBottom="10dp"
-                tools:text="@string/categories"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="@string/categories" />
 
         </LinearLayout>
     </ScrollView>

@@ -1,7 +1,7 @@
 package com.example.cryptocurrencytesttask.di
 
 import androidx.lifecycle.ViewModel
-import com.example.cryptocurrencytesttask.presentation.CurrencyViewModel
+import com.example.cryptocurrencytesttask.presentation.viewModels.CurrencyViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

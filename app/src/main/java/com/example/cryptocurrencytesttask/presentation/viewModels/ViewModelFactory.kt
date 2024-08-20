@@ -1,4 +1,4 @@
-package com.example.cryptocurrencytesttask.presentation
+package com.example.cryptocurrencytesttask.presentation.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

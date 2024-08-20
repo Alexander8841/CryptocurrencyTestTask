@@ -15,6 +15,6 @@
     <string name="categories">Cryptocurrency, Layer 1 (L1), FTX Holdings, Proof of Work (PoW), GMCI 30 Index</string>
     <string name="coin_price_dollar">$ %f</string>
     <string name="coin_price_ruble">₽ %f</string>
-    <string name="price_increase">+ %f%</string>
-    <string name="coin_decrease">- %f%</string>
+    <string name="price_increase">+ %f%%</string>
+    <string name="coin_decrease">- %f%%</string>
 </resources>

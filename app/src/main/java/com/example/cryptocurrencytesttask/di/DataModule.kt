@@ -13,7 +13,6 @@ interface DataModule {
     fun bindRepository(impl: CoinRepositoryImpl): CoinRepository
 
     companion object {
-        @ApplicationScope
         @Provides
         fun provideApiService() = ApiFactory.apiService
     }

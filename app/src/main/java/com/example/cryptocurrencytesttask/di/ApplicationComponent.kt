@@ -1,8 +1,8 @@
 package com.example.cryptocurrencytesttask.di
 
 import com.example.cryptocurrencytesttask.presentation.CurrencyApp
-import com.example.cryptocurrencytesttask.presentation.CurrencyListActivity
-import com.example.cryptocurrencytesttask.presentation.DetailInfoActivity
+import com.example.cryptocurrencytesttask.presentation.activities.CurrencyListActivity
+import com.example.cryptocurrencytesttask.presentation.activities.DetailInfoActivity
 import dagger.Component
 
 @Component(modules = [DataModule::class, ViewModelModule::class])

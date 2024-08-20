@@ -1,4 +1,4 @@
-package com.example.cryptocurrencytesttask.presentation
+package com.example.cryptocurrencytesttask.presentation.viewModels
 
 import android.util.Log
 import androidx.lifecycle.LiveData

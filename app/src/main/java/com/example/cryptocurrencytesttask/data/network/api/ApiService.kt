@@ -7,7 +7,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("coins/markets?x_cg_demo_api_key=CG-ratezoxStMTcJJ74Vy5f5wpF")
+    @GET("coins/markets?x_cg_demo_api_key=CG-ratezoxStMTcJJ74Vy5f5wpF&per_page=30")
     suspend fun getCurrencyList(@Query(CURRENCY) currency: String): List<CoinPriceInfoDto>
     @GET("coins/{id}?x_cg_demo_api_key=CG-ratezoxStMTcJJ74Vy5f5wpF")
     suspend fun getDetailInfo(@Path(ID) id: String): CoinDetailInfoDto
