@@ -20,7 +20,7 @@ class CoinMapper @Inject constructor(private val context: Context) {
                 currency,
                 it.id,
                 it.name,
-                it.shortName,
+                it.shortName.uppercase(),
                 it.imageUrl,
                 formattedPrice(it.price, currency),
                 formattedPercent(it.priceChangePercentage)
@@ -32,11 +32,14 @@ class CoinMapper @Inject constructor(private val context: Context) {
             coinDetailInfoDto.name,
             coinDetailInfoDto.image.imageUrl,
             coinDetailInfoDto.description.descriptionEnglish,
-            coinDetailInfoDto.categories.toString().substring(
-                START_LINE_INDEX,
-                getEndLineIndex(coinDetailInfoDto)
-            )
+            formattedCategories(coinDetailInfoDto.categories.toString())
         )
+
+    private fun formattedCategories(categories: String) =
+        if (categories.length > 2) categories.substring(
+            START_LINE_INDEX,
+            categories.length - LAST_INDEX
+        ) else EMPTY_LINE
 
     private fun formattedPrice(price: Double, currency: String): String {
 
@@ -56,11 +59,9 @@ class CoinMapper @Inject constructor(private val context: Context) {
         return context.getString(percentString, kotlin.math.abs(percent))
     }
 
-    private fun getEndLineIndex(coinDetailInfoDto: CoinDetailInfoDto) =
-        coinDetailInfoDto.categories.toString().length - 1
-
-
     companion object {
         private const val START_LINE_INDEX = 1
+        private const val LAST_INDEX = 1
+        private const val EMPTY_LINE = ""
     }
 }

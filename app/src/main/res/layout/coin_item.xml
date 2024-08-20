@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="16dp"
     android:paddingStart="16dp"
-    android:paddingEnd="8dp">
+    android:paddingEnd="16dp">
 
     <ImageView
         android:id="@+id/ivLogo"
@@ -44,7 +44,6 @@
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:text="$ 54,652.56"
@@ -55,7 +54,6 @@
         android:id="@+id/tvPriceChangePercentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:textColor="@color/red"
         android:textSize="15sp"
         tools:text="- 3.75%"

@@ -34,6 +34,14 @@ class CurrencyViewModel @Inject constructor(
     val loading: LiveData<Boolean>
         get() = _loading
 
+    private val _refresh = MutableLiveData<Unit>()
+    val refresh: LiveData<Unit>
+        get() = _refresh
+
+    private val _failRefresh = MutableLiveData<Unit>()
+    val failRefresh: LiveData<Unit>
+        get() = _failRefresh
+
     init {
         getCurrencyList()
     }
@@ -49,6 +57,20 @@ class CurrencyViewModel @Inject constructor(
                 Log.d("data_loading", e.message.toString())
             } finally {
                 _loading.value = false
+            }
+        }
+    }
+
+    fun refreshList(currency: String = CurrencyListActivity.USD) {
+        viewModelScope.launch {
+            try {
+                _currencyList.value = getCurrencyListUseCase(currency)
+                _successfulDownload.value = true
+            } catch (e: Exception) {
+                _failRefresh.value = Unit
+                Log.d("data_loading", e.message.toString())
+            } finally {
+                _refresh.value = Unit
             }
         }
     }

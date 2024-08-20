@@ -17,4 +17,5 @@
     <string name="coin_price_ruble">₽ %s</string>
     <string name="price_increase">+ %.2f%%</string>
     <string name="coin_decrease">- %.2f%%</string>
+    <string name="download_error">Произошла ошибка при загрузке</string>
 </resources>

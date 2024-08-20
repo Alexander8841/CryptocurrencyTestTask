@@ -44,6 +44,9 @@ dependencies {
     implementation ("com.google.dagger:dagger:2.51")
     ksp ("com.google.dagger:dagger-compiler:2.51")
 
+    //Pull to Refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
     //retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.7.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.7.0")

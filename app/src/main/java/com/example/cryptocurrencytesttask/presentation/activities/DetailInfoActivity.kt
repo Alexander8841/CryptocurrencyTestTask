@@ -53,6 +53,15 @@ class DetailInfoActivity : AppCompatActivity() {
                 tvDescription.text = it.description
                 tvCategories.text = it.categories
                 supportActionBar?.title = it.name
+
+                if (it.categories.isEmpty()) {
+                    tvCategoriesTitle.visibility = GONE
+                    tvCategories.visibility = GONE
+                }
+                if (it.description.isEmpty()) {
+                    tvDescriptionTitle.visibility = GONE
+                    tvDescription.visibility = GONE
+                }
             }
         }
         viewModel.successfulDownload.observe(this) {

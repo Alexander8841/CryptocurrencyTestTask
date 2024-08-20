@@ -1,8 +1,10 @@
 package com.example.cryptocurrencytesttask.presentation.activities
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.cryptocurrencytesttask.R
@@ -38,10 +40,10 @@ class CurrencyListActivity : AppCompatActivity() {
             startActivity(DetailInfoActivity.newIntent(this, it.id))
         }
         observeViewModel()
-        setOnClickListeners()
+        setListeners()
     }
 
-    private fun setOnClickListeners() {
+    private fun setListeners() {
         binding.cgCurrencyChoice.setOnCheckedStateChangeListener { _, checkedIds ->
             if (checkedIds.isNotEmpty()) {
                 binding.rvCurrencyList.visibility = GONE
@@ -53,9 +55,21 @@ class CurrencyListActivity : AppCompatActivity() {
             }
         }
         binding.buttonTryAgain.setOnClickListener {
-            val id = if (binding.chipRub.isChecked) RUB else USD
+            var id = RUB
+            if (!binding.chipRub.isChecked) {
+                id = USD
+                binding.cgCurrencyChoice.check(R.id.chipUsd)
+            }
             viewModel.getCurrencyList(id)
             binding.llError.visibility = GONE
+        }
+        binding.swipeRefresh.setOnRefreshListener {
+            var id = RUB
+            if (!binding.chipRub.isChecked) {
+                id = USD
+                binding.cgCurrencyChoice.check(R.id.chipUsd)
+            }
+            viewModel.refreshList(id)
         }
     }
 
@@ -74,6 +88,23 @@ class CurrencyListActivity : AppCompatActivity() {
         }
         viewModel.loading.observe(this) {
             binding.pbLoading.visibility = if (it) VISIBLE else GONE
+        }
+        viewModel.refresh.observe(this) {
+            binding.swipeRefresh.isRefreshing = false
+        }
+        viewModel.failRefresh.observe(this) {
+            Toast(this).showCustomToast()
+        }
+    }
+
+    private fun Toast.showCustomToast() {
+        val layout = layoutInflater.inflate(R.layout.custom_toast, findViewById(R.id.toastContainer))
+
+        this.apply {
+            setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, 50)
+            duration = Toast.LENGTH_LONG
+            view = layout
+            show()
         }
     }
 
