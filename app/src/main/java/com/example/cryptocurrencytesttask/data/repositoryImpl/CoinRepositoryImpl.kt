@@ -12,7 +12,10 @@ class CoinRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ) : CoinRepository {
     override suspend fun getCurrencyList(currency: String): List<CoinPriceInfo> {
-        return mapper.mapCoinPriceInfoDtoToCoinPriceInfoEntity(apiService.getCurrencyList(currency))
+        return mapper.mapCoinPriceInfoDtoToCoinPriceInfoEntity(
+            apiService.getCurrencyList(currency),
+            currency
+        )
     }
 
     override suspend fun getDetailInfo(id: String): CoinDetailInfo {
