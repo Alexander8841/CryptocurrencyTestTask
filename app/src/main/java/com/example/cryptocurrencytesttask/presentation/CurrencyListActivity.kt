@@ -19,5 +19,7 @@ class CurrencyListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        viewModel.getCurrencyList("asd")
+
     }
 }
