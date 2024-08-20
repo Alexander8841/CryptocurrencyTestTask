@@ -8,7 +8,7 @@ import com.example.cryptocurrencytesttask.di.DaggerApplicationComponent
 @ApplicationScope
 class CurrencyApp : Application() {
     val component: ApplicationComponent by lazy {
-        DaggerApplicationComponent.create()
+        DaggerApplicationComponent.factory().create(this)
     }
 
     override fun onCreate() {

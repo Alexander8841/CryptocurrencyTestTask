@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import com.example.cryptocurrencytesttask.R
 import com.example.cryptocurrencytesttask.databinding.CoinItemBinding
 import com.example.cryptocurrencytesttask.domain.pojo.CoinPriceInfo
-import com.example.cryptocurrencytesttask.presentation.activities.CurrencyListActivity
 import com.squareup.picasso.Picasso
 
 class CurrencyListAdapter(
@@ -28,23 +27,12 @@ class CurrencyListAdapter(
             Picasso.get().load(currencyInfo.imageUrl).into(ivLogo)
             tvCoinName.text = currencyInfo.name
             tvCoinShortName.text = currencyInfo.shortName
-
-            val priceString = if (currencyInfo.currency == CurrencyListActivity.USD) {
-                R.string.coin_price_dollar
-            } else R.string.coin_price_ruble
-
-            tvPrice.text = context.getString(priceString, currencyInfo.price)
+            tvPrice.text = currencyInfo.price
 
             val percent = currencyInfo.priceChangePercentage
-            var color = R.color.green
-            var percentString = R.string.price_increase
-            if (percent < 0) {
-                color = R.color.red
-                percentString = R.string.coin_decrease
-            }
-
+            val color = if (percent[0] == '+') R.color.green else R.color.red
+            tvPriceChangePercentage.text = percent
             tvPriceChangePercentage.setTextColor(context.getColor(color))
-            tvPriceChangePercentage.text = context.getString(percentString, kotlin.math.abs(percent))
 
             root.setOnClickListener { onClickListener?.invoke(currencyInfo) }
         }
